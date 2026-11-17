@@ -228,7 +228,16 @@ def _tcp_reachable(host_port: tuple[str, int], *, timeout: float) -> bool:
 
 
 def load_proxies_file(path) -> list[str]:
-    """Load a proxies.txt file (one URL per line, CRLF tolerated)."""
+    """Load proxies from a file OR accept a bare proxy URL.
+
+    Two accepted forms:
+    - a path to a proxies.txt file (one URL per line, CRLF tolerated)
+    - a single proxy URL (``http://user:pass@host:port``) — the typical
+      Docker/production case with one sticky ISP proxy; passing it
+      directly avoids a secrets file
+    """
+    if "://" in str(path):
+        return [str(path).strip()]
     out = []
     with open(path, "r", encoding="utf-8") as f:
         for line in f:
