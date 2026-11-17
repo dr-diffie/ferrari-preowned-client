@@ -8,7 +8,8 @@
 #   - VPN must be OFF: Ferrari's CloudFront blocks datacenter/VPN IPs.
 #     The engine's pre-flight probe detects a block and exits 2 with an
 #     actionable report — nothing else happens, the store is untouched.
-#   - auto-prunes orphaned image files after a fully clean run
+#   - prune stays MANUAL until opted in: dry-run first with
+#     'ferrari-preowned prune <target>'
 #   - keeps the last 14 daily logs; removes anything older
 set -euo pipefail
 
@@ -23,7 +24,7 @@ LOG="$LOG_DIR/daily_$(date +%Y-%m-%d).log"
 
 cd "$MODULE_DIR"
 "$PY" -m ferrari_preowned_client.cli smart "$TARGET" \
-    --budget 20000 --pace 6 --workers 4 --seed 424242 --prune \
+    --budget 20000 --pace 6 --workers 4 --seed 424242 \
     >> "$LOG" 2>&1
 status=$?
 echo "exit=$status $(date -Is)" >> "$LOG"
