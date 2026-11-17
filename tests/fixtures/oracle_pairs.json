@@ -1,0 +1,442 @@
+[
+ {
+  "vin": "ZFF09RPA3T0332786",
+  "blob": "IljixbcgVnJGsKsQfDGsrqz5rwQBa5IPt4PC6qlPjtnDfzxlYXflJn3PafTo%2F6BGuIYTHC%2FX4hVH3EH%2FtPf3Ahk%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrk9FuPqjGCKeuX%2FoaSPlbn4YoLhqfOEzIG1y6f6vtQPxuIYTHC%2FX4hVH3EH%2FtPf3Ahm37ulmLH8YYDKEEbxKGQ%3D%3D",
+  "carName": "Ferrari Roma Spider",
+  "dealerSlug": "006730",
+  "year": 2026,
+  "odo": 501,
+  "price": 299999
+ },
+ {
+  "vin": "ZFFXR48AXV0106814",
+  "blob": "IljixbcgVnJGsKsQfDGsrt6wCRMSZ46h1mG%2FZoPgjgE%2FcgBWmwpy8lE%2BrFIhI38kuIYTdESxihUs3kH9t%2FP4Cxs%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsronKC2o95Y7c6w4qGel0yePc1w56Ny4SksMPsPLvuU5zuIYTdESxihUs3kH9t%2FP4Cxu37ulmLH8ZbTSFE7ZHEg%3D%3D",
+  "carName": "F355 Spider",
+  "dealerSlug": "006480",
+  "year": 1997,
+  "odo": 35469,
+  "price": 0
+ },
+ {
+  "vin": "ZFF01SMA9P0291055",
+  "blob": "IljixbcgVnJGsKsQfDGsriemlfMW6V5eA6vnQKemzhue6wvBgZoP79r%2BCG%2FGczL%2BuIYTHCfW%2FxVN2EH%2BvvTwDxo%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrrlMl5GKNChh51faemarUsD1ofM8ijuHFFsKKwyRf5feuIYTHCfW%2FxVN2EH%2BvvTwDxq37ulmLH8abz6EHLxOGA%3D%3D",
+  "carName": "296 GTS",
+  "dealerSlug": "007006",
+  "year": 2023,
+  "odo": 4885,
+  "price": 0
+ },
+ {
+  "vin": "ZFF09RPA7T0332810",
+  "blob": "IljixbcgVnJGsKsQfDGsrmjH6mvn77JwcUmaO02l6mk1DP7OEjFUX4Z36En%2F6Z%2FLuIYTHC%2FX4hVD3EH%2FtPf4Cx8%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrjzLpKvjceUM1eBMOKhto7ivuNnsWL2%2B1i1YvkdCu7iCuIYTHC%2FX4hVD3EH%2FtPf4Cx%2B37ulmLH8cbz%2BGEb9NFg%3D%3D",
+  "carName": "Ferrari Roma Spider",
+  "dealerSlug": "006385",
+  "year": 2026,
+  "odo": 982,
+  "price": 309900
+ },
+ {
+  "vin": "ZFF87EXX000262315",
+  "blob": "IljixbcgVnJGsKsQfDGsro3%2BM%2BwhrJf1zmHrvYK0jHKM3XdtaXdK%2FCUuinHa%2BSTxuIYTFCHA6gxEuEH%2BsffzCxo%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrriGhcP4RDahfh5%2FXNgL56OllXM739zm8ICpz2%2Ff9MM8uIYTFCHA6gxEuEH%2BsffzCxq37ulmLH8cbzWEELpOFw%3D%3D",
+  "carName": "488 Challenge",
+  "dealerSlug": "006335",
+  "year": 2021,
+  "odo": 10664,
+  "price": 0
+ },
+ {
+  "vin": "ZFF92LLA3M0263355",
+  "blob": "IljixbcgVnJGsKsQfDGsrrpPP1Ohyhb6bfzPmBACoUBbWvepao%2FvnNFtPZF8K0pDuIYTFSTJ%2FhVHxUH%2BsfbzDxo%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrqWrU3ReY13Bjy6a%2BeTwdoigkFD5ZzgHnurj53i4sHYCuIYTFSTJ%2FhVHxUH%2BsfbzDxq37ulmLH8cbzSCErtMGQ%3D%3D",
+  "carName": "F8 Tributo",
+  "dealerSlug": "006870",
+  "year": 2021,
+  "odo": 5567,
+  "price": 0
+ },
+ {
+  "vin": "ZFF97CMA8M0262203",
+  "blob": "IljixbcgVnJGsKsQfDGsrvoui%2BlreymAzSIVrJgwJE61Xt8nTR%2BxKHPR8SJpfuDHuIYTFSHG%2FxVMxUH%2BsffyChw%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrhZ%2BwKUJ%2FGG2B%2BUKStiKXl67R3ZIR8Sn8%2BS7oIJ6l06KuIYTFSHG%2FxVMxUH%2BsffyChy37ulmLH8cbzSCFrdJFA%3D%3D",
+  "carName": "812 GTS",
+  "dealerSlug": "006870",
+  "year": 2021,
+  "odo": 2650,
+  "price": 834888
+ },
+ {
+  "vin": "ZSG06VTA7P0294945",
+  "blob": "IljixbcgVnJGsKsQfDGsrsCF%2FPU3y7JgvD8MvlGSQT1O5mb8iS7s8kAR0jO2gV6NuJMSHCDT5hVD2EH%2BvvH5Dho%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrgC2dhGmReklT85Qi1191Erlo1k1k2EArm%2FH1k5nTM%2BHuJMSHCDT5hVD2EH%2BvvH5Dhq37ulmLH8cbDCGE79IGQ%3D%3D",
+  "carName": "Ferrari Purosangue",
+  "dealerSlug": "007006",
+  "year": 2023,
+  "odo": 7039,
+  "price": 546373
+ },
+ {
+  "vin": "ZFF01SMA4S0321846",
+  "blob": "IljixbcgVnJGsKsQfDGsrv3s7osbPNgYo2f3KKZw9FOdgcpENJnVj1OTXEPLMzDpuIYTHCfW%2FxVA20H%2FtfT4Dhk%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrvgnLUeACYQdYshPzXZhgc%2F795HMIPBriUifveb3%2F%2BfsuIYTHCfW%2FxVG20H%2FtfT4Dhm37ulmLH8ebjWNHblNGA%3D%3D",
+  "carName": "296 GTS",
+  "dealerSlug": "006135",
+  "year": 2025,
+  "odo": 2500,
+  "price": 389000
+ },
+ {
+  "vin": "ZSG06VTA6S0315941",
+  "blob": "IljixbcgVnJGsKsQfDGsrknJnWfRS4kog6GmGynqzGKjNJNDLlcIR1zwwc%2BvpS2muJMSHCDT5hVC20H%2FtvD5Dh4%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrpKbJ6nI0pRwfgi4FobOoMWpIdnsTq7F4HZVdo%2BRdRVtuJMSHCDT5hVC20H%2FtvD5Dh637ulmLH8eajGGHbZLFg%3D%3D",
+  "carName": "Purosangue",
+  "dealerSlug": "068011",
+  "year": 2025,
+  "odo": 1901,
+  "price": 549900
+ },
+ {
+  "vin": "ZFF97CMA3P0289880",
+  "blob": "IljixbcgVnJGsKsQfDGsrmjVMoQQ5K8SPQyf7NVMnG2JOABJJ4UXWeHVidVXCs2fuIYTFSHG%2FxVH2EH%2Bv%2Fz4Ah8%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrtfrQ6zsxi0Q%2Bjka9UJMwlVsdJ7rLoWUsB8XhVNKHtxTuIYTFSHG%2FxVH2EH%2Bv%2Fz4Ah%2B37ulmLH8eaDGAHLhLEQ%3D%3D",
+  "carName": "812 GTS",
+  "dealerSlug": "007001",
+  "year": 2023,
+  "odo": 335,
+  "price": 949988
+ },
+ {
+  "vin": "ZFF77XJA9F0211170",
+  "blob": "IljixbcgVnJGsKsQfDGsrtns7qi%2BlVJi4WOnkztyNH5RqQ5GVU92UWKhrXLZktkiuIYTGyHd%2BBVNzkH%2BtvTxDR8%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrkUrK5sYtB%2FlAzVjFQ4Bp9YAXy9%2B4fq4mWswK37dLGF1uIYTGyHd%2BBVNzkH%2BtvTxDR%2B37ulmLH8eaDGAELZLGQ%3D%3D",
+  "carName": "Ferrari California T",
+  "dealerSlug": "007001",
+  "year": 2015,
+  "odo": 19462,
+  "price": 134988
+ },
+ {
+  "vin": "ZFF93LMA6N0280891",
+  "blob": "IljixbcgVnJGsKsQfDGsrumXtxv%2FY6oVIDAFjIPtIw7GgeqVYEjrlhgKPaILvdg8uIYTFSXJ%2FxVCxkH%2Bv%2FX4Ax4%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrgCxFUyzCE9%2BqKN6cHJ6vZhbzmYTRij69gG3jeRGg8%2B8uIYTFSXJ%2FxVCxkH%2Bv%2FX4Ax637ulmLH8fazGDErhJFA%3D%3D",
+  "carName": "F8 Spider",
+  "dealerSlug": "006860",
+  "year": 2022,
+  "odo": 3346,
+  "price": 634895
+ },
+ {
+  "vin": "ZFF79ALA2J0229703",
+  "blob": "IljixbcgVnJGsKsQfDGsrk3tg%2BITu3HBzxAf82wzShh3Gp7t30B%2FtXwGu%2BkEzScPuIYTGy%2FE%2FhVGwkH%2Btfz3Chw%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrtEZ9saQ5umCcvK8TLH2MAB8pN1HbMHaJLcCVg3T6U4yuIYTGy%2FE%2FhVGwkH%2Btfz3Chy37ulmLHwWbTKHFr5JGQ%3D%3D",
+  "carName": "488 GTB",
+  "dealerSlug": "007009",
+  "year": 2018,
+  "odo": 9109,
+  "price": 343125
+ },
+ {
+  "vin": "ZFF77XJA8H0223023",
+  "blob": "IljixbcgVnJGsKsQfDGsrglwO09cbsytrUfQkI2XRMHPPLiPBxPL7aS3m9BwQKIVuIYTGyHd%2BBVMwEH%2BtfbwCBw%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrmuc4XjdL%2BReq4UKzbNGd441Rg4lzPSPhs2IvbWGoY3WuIYTGyHd%2BBVMwEH%2BtfbwCBy37ulmLHwWbTSEEr5MEw%3D%3D",
+  "carName": "Ferrari California T",
+  "dealerSlug": "007006",
+  "year": 2017,
+  "odo": 35475,
+  "price": 0
+ },
+ {
+  "vin": "ZFF90HLA2L0249979",
+  "blob": "IljixbcgVnJGsKsQfDGsrhGhdKeR%2Bcpw32JT4bIWKLe0mjJl424EdOAdGRLaKEsSuIYTFSbN%2FhVGxEH%2Bs%2Fz5DRY%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrvOXu%2FX0LVUfEQ91AFdmIqRgPgkNdBFAnWWjk8dnNdXvuIYTFSbN%2FhVGxEH%2Bs%2Fz5DRa37ulmLHwWazGGEL1HGA%3D%3D",
+  "carName": "488 Pista",
+  "dealerSlug": "006391",
+  "year": 2020,
+  "odo": 14450,
+  "price": 0
+ },
+ {
+  "vin": "ZFF80AMA4J0232986",
+  "blob": "IljixbcgVnJGsKsQfDGsrjKLAr%2Bq8UaqktiYyW6duvo%2BEp%2BrwLavrnc0aqk%2BHybfuIYTFCbE%2FxVAwkH%2BtPf5Ahk%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrne%2BJ5niQougt6PCN4jtdGzt6Ov36snXyrbQvkYpSV0JuIYTFCbE%2FxVAwkH%2BtPf5Ahm37ulmLHwXYDWDFLZKEA%3D%3D",
+  "carName": "488 Spider",
+  "dealerSlug": "006810",
+  "year": 2018,
+  "odo": 10288,
+  "price": 399900
+ },
+ {
+  "vin": "ZFF96NMA4R0309880",
+  "blob": "IljixbcgVnJGsKsQfDGsrjG6cj3abHt3Gvlwtteq9Xs7tUmk%2BVWu4YCiX0ynwDgkuIYTFSDL%2FxVA2kH%2Ft%2Fz4Ah8%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrpAbxO3tFIRWZaWZIoLDnFIOipy3NuMMonjTcUixO85ruIYTFSDL%2FxVA2kH%2Ft%2Fz4Ah%2B37ulmLHwYazGBELlJFQ%3D%3D",
+  "carName": "SF90 Spider",
+  "dealerSlug": "006125",
+  "year": 2024,
+  "odo": 2214,
+  "price": 0
+ },
+ {
+  "vin": "ZFFEW59A280158690",
+  "blob": "IljixbcgVnJGsKsQfDGsrvV%2B6Yv7uyW2k2a2Pkg%2BPpuO9HltcUpSm5bXUKNTeZM5uIYTaUGwixVGsEH9sv32Ax8%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrvz5IT7tQs%2Br1WA%2Fgeni3dofo18q%2FAnnc12X8%2FwhNyWvuIYTaUGwixVGsEH9sv32Ax%2B37ulmLHwZbzOMFbtMGQ%3D%3D",
+  "carName": "F430 Spider",
+  "dealerSlug": "006370",
+  "year": 2008,
+  "odo": 12501,
+  "price": 279972
+ },
+ {
+  "vin": "ZFF96NMA4R0306283",
+  "blob": "IljixbcgVnJGsKsQfDGsrnzhvSYx1T3xkc0ULbBtT%2FRBKnfmLC5uq9Jm4RRb7uoHuIYTFSDL%2FxVA2kH%2Ft%2FPyAhw%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsroBpNNOkxcBHmDzju%2BhHYdrABuh%2BYMZNj4pGKrek%2FlfFuIYTFSDL%2FxVA2kH%2Ft%2FPyAhy37ulmLHwZbT%2BAHb9GFA%3D%3D",
+  "carName": "SF90 Spider",
+  "dealerSlug": "006470",
+  "year": 2024,
+  "odo": 907,
+  "price": 624795
+ },
+ {
+  "vin": "ZFF90HLA6L0249807",
+  "blob": "IljixbcgVnJGsKsQfDGsroq%2BM0KD6m9u44iQmkBb%2Br717Gu5ADATkcSUdCEWTpTGuIYTFSbN%2FhVCxEH%2Bs%2Fz4Chg%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrrlIYCWMyZxtXS3xz1uisY3ubDdV0cavHHyWTp%2FKHElLuIYTFSbN%2FhVCxEH%2Bs%2Fz4Chi37ulmLHwZbT%2BAE7xGFg%3D%3D",
+  "carName": "488 Pista",
+  "dealerSlug": "006470",
+  "year": 2020,
+  "odo": 4012,
+  "price": 1319795
+ },
+ {
+  "vin": "ZFF67NFA7E0203611",
+  "blob": "IljixbcgVnJGsKsQfDGsroDMpvGEdR8wAo7K9HbUMMkCWOpnyPJTKNoCVqC647OjuIYTGiHL9BVDzUH%2Bt%2Fb2Cx4%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsriIFYKLqecVLlqYH0eEGZWEn3ojFD1E3hQ72TczAEs9JuIYTGiHL9BVDzUH%2Bt%2Fb2Cx637ulmLHwZaDWAEr1LGA%3D%3D",
+  "carName": "458 Italia",
+  "dealerSlug": "006860",
+  "year": 2014,
+  "odo": 6563,
+  "price": 484895
+ },
+ {
+  "vin": "ZFF01SMA3P0290936",
+  "blob": "IljixbcgVnJGsKsQfDGsrvXpGJvIp7lAdI4M%2FB1Ki72WwYKGyCuNTW0GASL%2BamEJuIYTHCfW%2FxVH2EH%2BvvX5CRk%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrn0GQkzMz8qvZoKF9GOrqiMJtwjBwgtpe9wja3eHeX4tuIYTHCfW%2FxVH2EH%2BvvX5CRm37ulmLHwabDaBE7lLEA%3D%3D",
+  "carName": "296 GTS",
+  "dealerSlug": "066385",
+  "year": 2023,
+  "odo": 6110,
+  "price": 409000
+ },
+ {
+  "vin": "ZFF81BFA6H0219716",
+  "blob": "IljixbcgVnJGsKsQfDGsrn%2Bd80bWO9Rk%2B0Ip8hylNyUa4v6k9oS0%2BmxAjdSrUiuluIYTFCfH9BVCwEH%2Btvz3Cxk%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrmy%2FAk0nSox82BRczQatQvB7MLl0oVVURypXUM5Akf35uIYTFCfH9BVCwEH%2Btvz3Cxm37ulmLHwaaDaEF7hJGA%3D%3D",
+  "carName": "F12tdf",
+  "dealerSlug": "006880",
+  "year": 2017,
+  "odo": 1700,
+  "price": 0
+ },
+ {
+  "vin": "ZFF93LMAXN0279002",
+  "blob": "IljixbcgVnJGsKsQfDGsrlz9%2B0syLnrvAMrwsbPjVOeBRj1oLih9iuS6c9%2BXJJQLuIYTFSXJ%2FxUsxkH%2BsPzwCh0%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrkqG44NNEghjOeznrJeBeYPIipx%2FcHaV4OW4pOAVdLSXuIYTFSXJ%2FxUsxkH%2BsPzwCh237ulmLHwbYTWAHL5OFg%3D%3D",
+  "carName": "F8 Spider",
+  "dealerSlug": "007003",
+  "year": 2022,
+  "odo": 10629,
+  "price": 619990
+ },
+ {
+  "vin": "ZFF09RPAXS0324764",
+  "blob": "IljixbcgVnJGsKsQfDGsrtxOncfzmU7KSaen2umkfeVvJ6DoajIoQENa84sAjAJzuIYTHC%2FX4hUs20H%2FtfH3DBs%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrk6Rbhu64Q0M9HJhMyK5cmZhIEtif5lPSfyIbz8SGkXFuIYTHC%2FX4hUs20H%2FtfH3DBu37ulmLHwbYTeMFr1IFA%3D%3D",
+  "carName": "Ferrari Roma Spider",
+  "dealerSlug": "006500",
+  "year": 2025,
+  "odo": 545,
+  "price": 319900
+ },
+ {
+  "vin": "ZFF80AMA7J0234778",
+  "blob": "IljixbcgVnJGsKsQfDGsrhPnCuvlNDiROdYkQFimHMd7Cs1%2BLfqsMfzZSHi2nt10uIYTFCbE%2FxVDwkH%2BtPH3DRc%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrnbss28IgdCnlzTzoUtvdZRPwYMK4BreURI%2BDMiDPCKEuIYTFCbE%2FxVDwkH%2BtPH3DRe37ulmLHwbbjOHE7hJFw%3D%3D",
+  "carName": "488 Spider",
+  "dealerSlug": "007007",
+  "year": 2018,
+  "odo": 15089,
+  "price": 419900
+ },
+ {
+  "vin": "ZFF68NHA7D0195549",
+  "blob": "IljixbcgVnJGsKsQfDGsrtQ7JL9D2iO0gwAcDtRBKG4mOx08E3TYgvYC7lB%2BeTcKuIYTGi7L%2BhVDzEH9vvD1DhY%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrnLGyjSjqwRcKwpvdY%2F8vrcHs2WOQpIVRKFI6V9WOABpuIYTGi7L%2BhVDzEH9vvD1Dha37ulmLHwbbjOHErdPEw%3D%3D",
+  "carName": "458 Spider",
+  "dealerSlug": "007007",
+  "year": 2013,
+  "odo": 7095,
+  "price": 589000
+ },
+ {
+  "vin": "ZFF81BFA4G0217722",
+  "blob": "IljixbcgVnJGsKsQfDGsrnH3oyOU6fqCWXxJkydGCsypUGDHk6njWvCILYcDJhwYuIYTFCfH9BVAz0H%2BtvL3CB0%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrp64jsLTUeKAsMTFC4UVuwD2%2F3uKoMr2IC0RY1vGRBOEuIYTFCfH9BVAz0H%2BtvL3CB237ulmLHwbbjOHF71HGQ%3D%3D",
+  "carName": "F12tdf",
+  "dealerSlug": "007007",
+  "year": 2016,
+  "odo": 6238,
+  "price": 3800000
+ },
+ {
+  "vin": "ZFFYT53A210123541",
+  "blob": "IljixbcgVnJGsKsQfDGsrqXBhsmH%2BDwTbddN6NlAI0XxNed%2FKlf%2FWaQkvYS7H2%2BLuIYTdUKwgRVGuUH9tfb1Dh4%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrrs%2FQWkv%2FU5LQvyEHKOnEmeblZmyAJlW104wIF7tw3%2BhuIYTdUKwgRVGuUH9tfb1Dh637ulmLHwbbz%2BCFrtNFQ%3D%3D",
+  "carName": "360 Spider",
+  "dealerSlug": "006860",
+  "year": 2001,
+  "odo": 16246,
+  "price": 314995
+ },
+ {
+  "vin": "ZFF93LMA1P0295950",
+  "blob": "IljixbcgVnJGsKsQfDGsrtX2ZT%2Fq38ufExyJx5nQcmpSUz8YAn%2BvV61IoNuqZg2ruIYTFSXJ%2FxVF2EH%2BvvD5Dx8%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrjptbouOneVRgn0kOMb3M%2FgJ2shQDEWTG7k%2FHtfsrEj3uIYTFSXJ%2FxVF2EH%2BvvD5Dx%2B37ulmLHwbbT6HHLtGEA%3D%3D",
+  "carName": "F8 Spider",
+  "dealerSlug": "006385",
+  "year": 2023,
+  "odo": 1073,
+  "price": 699900
+ },
+ {
+  "vin": "ZFF09RPA3T0334568",
+  "blob": "IljixbcgVnJGsKsQfDGsrgfgV6fTWIAZD%2BE8PfkWApXVPBMVVBEf1DpMJ91sVfs7uIYTHC%2FX4hVH3EH%2FtPH1DBc%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrmRxBcqWOTaT7ytWZlsWGEHK2OTpKKh%2BrLfcMvob%2FkfluIYTHC%2FX4hVH3EH%2FtPH1DBe37ulmLHwbbTWAFL5PFA%3D%3D",
+  "carName": "Ferrari Roma Spider",
+  "dealerSlug": "006870",
+  "year": 2026,
+  "odo": 234,
+  "price": 334991
+ },
+ {
+  "vin": "ZFF90HLA3L0248906",
+  "blob": "IljixbcgVnJGsKsQfDGsrgdQbL4Y89huAARblmqJfL1WcAvOVjR5r180U1G4eHMbuIYTFSbN%2FhVHxEH%2Bs%2F35Chk%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrol5UjN3yeFCaSmC0tgQBYBdtAYUqgEpphsjTGbecjZNuIYTFSbN%2FhVHxEH%2Bs%2F35Chm37ulmLHwbbTSCF7tHGQ%3D%3D",
+  "carName": "488 Pista",
+  "dealerSlug": "066385",
+  "year": 2020,
+  "odo": 1517,
+  "price": 1349500
+ },
+ {
+  "vin": "ZFF79ALA3H0225444",
+  "blob": "IljixbcgVnJGsKsQfDGsrs1qVk4k%2BzYKip8h566TNer0ymDJsaY8hFTkgIMmBH6fuIYTGy%2FE%2FhVHwEH%2BtfD0Dhs%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrsB8ijiOgL9zaCfn0iXvu4CFyfIKCNILV3ZtIYkdcZnhuIYTGy%2FE%2FhVHwEH%2BtfD0Dhu37ulmLHwbbTaFELtNFw%3D%3D",
+  "carName": "488 GTB",
+  "dealerSlug": "007008",
+  "year": 2017,
+  "odo": 1455,
+  "price": 449990
+ },
+ {
+  "vin": "ZFF93LMA9P0291208",
+  "blob": "IljixbcgVnJGsKsQfDGsrkD%2FVJH2V7GaLp9XA46VWxsezivsOVqcHPimhj1ixLYEuIYTFSXJ%2FxVN2EH%2BvvTyChc%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrsrsBMhyu75kSyz5WVzTWUxm0WKMp%2F5MWT%2Fv9rKpfOzuuIYTFSXJ%2FxVN2EH%2BvvTyChe37ulmLHwbaj%2BCFb5OEw%3D%3D",
+  "carName": "F8 Spider",
+  "dealerSlug": "006317",
+  "year": 2023,
+  "odo": 681,
+  "price": 729900
+ },
+ {
+  "vin": "ZFF02RPA4N0274209",
+  "blob": "IljixbcgVnJGsKsQfDGsrrdfXJ2dniUkY8gEbCkh6g6SmpR0YNRtEF%2Fmrpbct1YfuIYTHCTX4hVAxkH%2BsPHyChY%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrhdkpuqwDpsmAma3En8NrIrRTFgOqpK8Mk2l4oJZ8hVauIYTHCTX4hVAxkH%2BsPHyCha37ulmLHwbaj%2BGE79IGQ%3D%3D",
+  "carName": "Ferrari Portofino M",
+  "dealerSlug": "007007",
+  "year": 2022,
+  "odo": 7494,
+  "price": 299000
+ },
+ {
+  "vin": "ZFF12YXX000303868",
+  "blob": "IljixbcgVnJGsKsQfDGsrrCd1HsH%2Fn27Y005jJpocey0Pcc1z21H6Ni%2FMcCGojhquIYTHSTc6gxEuEH%2Ft%2Fb4DBc%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrj0%2FMepOVU4cqeUPgJECvM9KD%2F5cY1e7XOlVLK18wVfCuIYTHSTc6gxEuEH%2Ft%2Fb4DBe37ulmLHwbaj6MEb1KFQ%3D%3D",
+  "carName": "296 Challenge",
+  "dealerSlug": "006205",
+  "year": 2023,
+  "odo": 6290,
+  "price": 275000
+ },
+ {
+  "vin": "ZFF07WLA0S0317851",
+  "blob": "IljixbcgVnJGsKsQfDGsrpmJ9bs7jIy2FN9uBUsoZ34fWF9Kwa7pZZHWUxJ3N%2BeYuIYTHCHS%2FhVE20H%2FtvL4Dx4%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrocL014IDBmwFFHU2oHiaQzXF4mWKk9AEIeNh%2B3tSYOQuIYTHCHS%2FhVE20H%2FtvL4Dx637ulmLHwbajGDFb1JEw%3D%3D",
+  "carName": "SF90 XX Stradale",
+  "dealerSlug": "006095",
+  "year": 2025,
+  "odo": 1342,
+  "price": 0
+ },
+ {
+  "vin": "ZFF74UFA4H0226887",
+  "blob": "IljixbcgVnJGsKsQfDGsrv8ichmtJ4Coaz1HUXVFs4TltFmMJL67X4Vq2URzRKyHuIYTGyLQ9BVAwEH%2BtfP4Ahg%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrpfHM4WyPNTaeVCBo8vuuB1XyEc5f%2FJHDasQmJ32NRtMuIYTGyLQ9BVAwEH%2BtfP4Ahi37ulmLHwbajGFE7xIGQ%3D%3D",
+  "carName": "F12berlinetta",
+  "dealerSlug": "006135",
+  "year": 2017,
+  "odo": 9007,
+  "price": 629000
+ },
+ {
+  "vin": "ZFF68NHA5D0190818",
+  "blob": "IljixbcgVnJGsKsQfDGsrsZiuh4FRKkUFStJX2TVu%2FxhwS08uAcV9Az%2FJe13UvMLuIYTGi7L%2BhVBzEH9vvX4Cxc%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrqneAIms%2BlVZmpQFeci3ZKrwj%2FOcqjzitIcu83GBMjUvuIYTGi7L%2BhVBzEH9vvX4Cxe37ulmLHwbajWNF7lOGQ%3D%3D",
+  "carName": "458 Spider",
+  "dealerSlug": "006860",
+  "year": 2013,
+  "odo": 6652,
+  "price": 619895
+ },
+ {
+  "vin": "ZFF75VFA9F0211320",
+  "blob": "IljixbcgVnJGsKsQfDGsrpqf5Q%2BPFz6N0yY%2BsWvzT0zY1WFa7Wt3VFxOAPE2qPVUuIYTGyPT9BVNzkH%2BtvTzCB8%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrk18lQocoRZgSliaNCH61VdkdcC0Mua7qpzdWi6BlfobuIYTGyPT9BVNzkH%2BtvTzCB%2B37ulmLHwbajWCE7xJFA%3D%3D",
+  "carName": "458 Speciale",
+  "dealerSlug": "006470",
+  "year": 2015,
+  "odo": 2416,
+  "price": 0
+ },
+ {
+  "vin": "ZFF99SLA0P0295514",
+  "blob": "IljixbcgVnJGsKsQfDGsrvj6mp1uLNmH%2BMQABGr5xcN9UIqZgjukKa4WM0G7jJBauIYTFS%2FW%2FhVE2EH%2BvvD1Cxs%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrnw3appiuyNUzaK5g2v5yYehM38oCMy1lEfE2XH4SqqguIYTFS%2FW%2FhVE2EH%2BvvD1Cxu37ulmLHwfYDOAFbtNEA%3D%3D",
+  "carName": "296 GTB",
+  "dealerSlug": "007006",
+  "year": 2023,
+  "odo": 6072,
+  "price": 329000
+ },
+ {
+  "vin": "ZFF79ALA8J0230452",
+  "blob": "IljixbcgVnJGsKsQfDGsrswuxNePfTFPjJmkDPB3OrrfHMij%2B%2FUG8qyXBp98foONuIYTGy%2FE%2FhVMwkH%2BtPX0Dx0%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsruo2GtLnj4%2BMPGdmgmjosB2mInQ%2FgrBocRGItMqOizY%2BuIYTGy%2FE%2FhVMwkH%2BtPX0Dx237ulmLHwfajKBErlIFA%3D%3D",
+  "carName": "488 GTB",
+  "dealerSlug": "006740",
+  "year": 2018,
+  "odo": 943,
+  "price": 547490
+ },
+ {
+  "vin": "ZFF80AMA6J0235758",
+  "blob": "IljixbcgVnJGsKsQfDGsrk0I0Don3sMyW3LPfUaQaex0SK8Ic%2FMtgTufY8Whv%2FKXuIYTFCbE%2FxVCwkH%2BtPD3Dxc%3D",
+  "id_blob": "IljixbcgVnJGsKsQfDGsrlPo82pgCiyWDuAfOjd6S5D5Qq4qlBkJGOaVxVtfGGr3uIYTFCbE%2FxVCwkH%2BtPD3Dxe37ulmLHwfaz%2BCEbdJFA%3D%3D",
+  "carName": "488 Spider",
+  "dealerSlug": "006810",
+  "year": 2018,
+  "odo": 17509,
+  "price": 397900
+ }
+]
