@@ -1,5 +1,33 @@
 # Changelog
 
+## 1.4.0 — 2026-11-17
+
+Daily-production release.
+
+### US-homenet URL persistence
+- Store now persists the homenet gallery URLs that arrive inline with
+  every search response (US market). Free back-fill: no extra requests.
+  Makes the audit complete (~150k expected files), extends the dead-URL
+  cache to homenet 404s, and enables safe orphan pruning.
+
+### Prune
+- New `prune` CLI subcommand: deletes old-URL-generation image files.
+  Dry-run by default; `--apply` executes. Fail-closed: refuses on stale
+  stores; sold cars', unattributed folders', and all-dead cars' files
+  are never touched.
+- Optional `smart --prune` auto-prune after fully clean runs.
+
+### Daily production cadence
+- `scripts/run_daily.sh`: smart crawl + auto-prune (opt-in via flag),
+  log rotation (keep 14).
+- systemd user units (timer 03:00, `Persistent=true`, blocked-run exit 2
+  treated as expected outcome).
+
+### Progress
+- `cars D/T+` marks counts() over-delivery; audit reports
+  `dead_urls_skipped` and excludes sold cars from expected files.
+
+
 ## 1.3.0 — 2026-11-17
 
 Production-verified release. Third full campaign: 49/49 countries,

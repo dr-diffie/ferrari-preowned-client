@@ -84,12 +84,13 @@ class ListingState:
     """Per-listing record inside the SmartStore."""
 
     __slots__ = ("identity_key", "ad_hash", "detail_hash", "image_urls",
-                 "first_seen", "last_seen", "last_change", "removed",
-                 "country")
+                 "homenet_urls", "first_seen", "last_seen", "last_change",
+                 "removed", "country")
 
     def __init__(self, identity_key: str, ad_hash: Optional[str] = None,
                  detail_hash: Optional[str] = None,
                  image_urls: Optional[list[str]] = None,
+                 homenet_urls: Optional[list[str]] = None,
                  first_seen: Optional[str] = None,
                  last_seen: Optional[str] = None,
                  last_change: Optional[str] = None,
@@ -99,6 +100,10 @@ class ListingState:
         self.ad_hash = ad_hash
         self.detail_hash = detail_hash
         self.image_urls = list(image_urls or [])
+        # US-market cars: gallery URLs come inline with every search
+        # response (homenet partner). Persisted since v1.4 so the audit
+        # and the dead-URL cache can see them.
+        self.homenet_urls = list(homenet_urls or [])
         self.first_seen = first_seen or _utcnow_iso()
         self.last_seen = last_seen or self.first_seen
         self.last_change = last_change or self.first_seen
@@ -108,7 +113,9 @@ class ListingState:
     def to_dict(self) -> dict:
         return {
             "ad_hash": self.ad_hash, "detail_hash": self.detail_hash,
-            "image_urls": self.image_urls, "first_seen": self.first_seen,
+            "image_urls": self.image_urls,
+            "homenet_urls": self.homenet_urls,
+            "first_seen": self.first_seen,
             "last_seen": self.last_seen, "last_change": self.last_change,
             "removed": self.removed, "country": self.country,
         }
@@ -120,6 +127,7 @@ class ListingState:
             ad_hash=d.get("ad_hash"),
             detail_hash=d.get("detail_hash"),
             image_urls=d.get("image_urls"),
+            homenet_urls=d.get("homenet_urls"),
             first_seen=d.get("first_seen"),
             last_seen=d.get("last_seen"),
             last_change=d.get("last_change"),
@@ -239,6 +247,33 @@ class SmartStore:
             st.last_seen = _utcnow_iso()
             self._dirty = True
             st.last_change = _utcnow_iso()
+
+    @property
+    def dead_image_urls(self) -> set[str]:
+        """URLs the image plane marked dead upstream (404 at origin).
+
+        Never re-requested (zero-cost skip); excluded from the audit's
+        expected set — a dead URL has no file on disk by design.
+        """
+        return set(self._meta.get("dead_image_urls") or ())
+
+    def record_homenet(self, listing: Listing, urls: list[str]) -> None:
+        """Persist the search-response gallery URLs of a US-market car
+        (homenet partner). The URLs churn on the partner side; the
+        current generation replaces the old one (old files become
+        audit-visible orphans -> prune). Deduped, order-preserving:
+        the order IS the on-disk filename index."""
+        cleaned = [u for u in dict.fromkeys(urls) if u]
+        with self._lock:
+            st = self._listings.get(listing.identity_key)
+            if st is None:
+                st = ListingState(listing.identity_key)
+                self._listings[listing.identity_key] = st
+            if st.homenet_urls != cleaned:
+                st.homenet_urls = cleaned
+                st.last_change = _utcnow_iso()
+            st.last_seen = _utcnow_iso()
+            self._dirty = True
 
     def record_removals(self, seen_keys: Iterable[str],
                         *, only_countries: Optional[Iterable[str]] = None,

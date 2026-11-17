@@ -210,7 +210,10 @@ class RunProgress:
             cc_part += ")"
         fetch = f"{self.phase} {self.countries_done}/{self.countries_total}{cc_part}"
         if self.cars_total:
-            fetch += f" cars {self.cars_done}/{self.cars_total}"
+            # '+' marks over-delivery: the counts() probe occasionally
+            # underestimates what search actually returns (~0.9%)
+            over = "+" if self.cars_done > self.cars_total else ""
+            fetch += f" cars {self.cars_done}/{self.cars_total}{over}"
             # fetch ETA, simple observed form: wall-time per walked car
             # so far (self-correcting: includes pacing + dwells). Only
             # shown once enough cars make the average meaningful.
@@ -344,6 +347,111 @@ def ledger_stats(transport) -> dict:
 # Post-run audit
 # ---------------------------------------------------------------------------
 
+def prune_orphans(images_dir: "str | Path", store,
+                  *, apply: bool = False) -> dict:
+    """Delete image files no current store URL explains.
+
+    Orphans are leftovers of URL churn (the homenet partner regenerates
+    image IDs): old-generation files of LIVE cars. DRY-RUN by default;
+    ``apply=True`` deletes.
+
+    Data-safety rules (fail-closed, per project doctrine):
+    - a live car whose CURRENT urls are ALL dead upstream keeps every
+      file in its folders (old generations are the best data we have;
+      deleting them would be permanent loss);
+    - folders of cars marked removed (sold) are never touched here —
+      counted and reported as ``sold_car_files`` only;
+    - folders that cannot be attributed to any store car are counted as
+      ``unattributed_files`` and never touched;
+    - refuses entirely if >10% of live cars have no recorded URLs at all
+      (stale store would mass-delete).
+    """
+    img_root = Path(images_dir)
+    live = [st for st in store._listings.values()  # noqa: SLF001
+            if not st.removed]
+    with_urls = [st for st in live
+                 if (st.image_urls or getattr(st, "homenet_urls", []))]
+    if live and len(with_urls) / len(live) < 0.9:
+        return {
+            "refused": True,
+            "reason": (f"{len(live) - len(with_urls)} of {len(live)} live "
+                       f"cars have no recorded image URLs — store looks "
+                       f"stale; run one smart crawl first"),
+        }
+    dead = (store.dead_image_urls
+            if hasattr(store, "dead_image_urls") else set())
+
+    # per-car classification for the prune decision
+    expected: dict[str, set[str]] = {}     # key -> filenames to KEEP
+    protected: set[str] = set()            # keys: keep every file
+    removed_keys = {k for k, st in store._listings.items()
+                    if st.removed}
+    for key, st in store._listings.items():
+        if st.removed:
+            continue
+        raw = [u for u in (st.image_urls or [])
+               + getattr(st, "homenet_urls", []) if u]
+        live_urls = [u for u in raw if u not in dead]
+        if raw and not live_urls:
+            protected.add(key)  # all current URLs dead upstream
+            continue
+        names = expected.setdefault(key, set())
+        for i, u in enumerate(live_urls):
+            digest = hashlib.sha256(u.encode()).hexdigest()[:10]
+            names.add(f"{i:03d}_{digest}.webp")
+
+    folders = [d for d in img_root.iterdir() if d.is_dir()] \
+        if img_root.exists() else []
+    orphans: list[Path] = []
+    bytes_freed = 0
+    sold_files = unattributed = 0
+
+    def owner_key(folder_name: str):
+        key = folder_name.split("_")[0]
+        if key in expected or key in protected or key in removed_keys:
+            return key
+        prefix = folder_name[:64]
+        for k in list(expected) + list(protected) + list(removed_keys):
+            if prefix.startswith(k[:64]) or k.startswith(prefix):
+                return k
+        return None
+
+    for folder in folders:
+        owner = owner_key(folder.name)
+        if owner is None or owner in protected:
+            # unknown folders: conservative, count only
+            if owner is None:
+                unattributed += sum(1 for f in folder.iterdir()
+                                    if f.is_file())
+            continue
+        if owner in removed_keys:
+            sold_files += sum(1 for f in folder.iterdir() if f.is_file())
+            continue
+        for f in folder.iterdir():
+            if f.is_file() and f.name not in expected[owner]:
+                orphans.append(f)
+                bytes_freed += f.stat().st_size
+
+    result = {
+        "refused": False,
+        "orphan_files": len(orphans),
+        "bytes_freed": bytes_freed,
+        "sold_car_files_untouched": sold_files,
+        "unattributed_files_untouched": unattributed,
+        "applied": bool(apply),
+        "sample": [str(o.relative_to(img_root)) for o in orphans[:20]],
+    }
+    if apply:
+        for f in orphans:
+            f.unlink(missing_ok=True)
+        for folder in folders:
+            try:
+                folder.rmdir()  # drop now-empty dirs only
+            except OSError:
+                pass
+    return result
+
+
 def audit_images(images_dir: "str | Path", store,
                  error_log: Optional[ErrorLog] = None) -> dict:
     """Verify the store's expected image files exist on disk.
@@ -371,8 +479,13 @@ def audit_images(images_dir: "str | Path", store,
     orphan_files = 0
     missing_by_car: dict[str, int] = {}
     no_folder: list[str] = []
+    dead_urls = (store.dead_image_urls
+                 if hasattr(store, "dead_image_urls") else set())
     for key, st in store._listings.items():  # noqa: SLF001 (internal API)
-        urls = st.image_urls or []
+        urls = (st.image_urls or []) + getattr(st, "homenet_urls", [])
+        if st.removed:
+            continue  # sold cars: their folders are prune candidates
+        urls = [u for u in urls if u and u not in dead_urls]
         if not urls:
             continue
         folders = folders_for(key)
@@ -408,6 +521,7 @@ def audit_images(images_dir: "str | Path", store,
         "cars_without_folder": len(no_folder),
         "orphan_files": orphan_files,
         "sample_missing": dict(list(missing_by_car.items())[:20]),
+        "dead_urls_skipped": len(dead_urls),
     }
     if error_log is not None and missing_total:
         error_log.add(
@@ -689,6 +803,8 @@ def run_pipeline(client, target_dir: "str | Path", *, mode: "str" = "smart",
                         # resume-safe: queue gallery so MISSING files
                         # complete; existing ones skip locally
                         if listing.images.homenet:
+                            store.record_homenet(listing,
+                                                 listing.images.homenet)
                             queue_gallery(listing, listing.images.homenet,
                                           "homenet:" + key)
                         elif gallery_urls:
@@ -701,6 +817,8 @@ def run_pipeline(client, target_dir: "str | Path", *, mode: "str" = "smart",
                                   "homenet:" + key)
                     if smart:
                         store.record_seen(listing)
+                        store.record_homenet(listing,
+                                             listing.images.homenet)
                     continue
 
                 if smart:

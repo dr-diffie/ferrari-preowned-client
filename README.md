@@ -5,7 +5,7 @@
 **A stealthy, fully-verified Python client for [preowned.ferrari.com](https://preowned.ferrari.com) — search API, detail pages, THRON image galleries, and VIN decryption with a self-healing keystream oracle.**
 
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
-[![Tests](https://img.shields.io/badge/tests-108%20passing-brightgreen)](#tests)
+[![Tests](https://img.shields.io/badge/tests-121%20passing-brightgreen)](#tests)
 [![Live Verified](https://img.shields.io/badge/live%20verified-2026--09--24-success)](#verification)
 [![Dependencies](https://img.shields.io/badge/dependencies-requests%20only-orange)](#design-principles)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
@@ -34,6 +34,27 @@
 | 🛡️ **Stealth by design** | coherent personas, referer realism, human pacing, dwell pauses, stop-on-block | — |
 | 🔁 **Self-healing crypto** | keystream rotation? one oracle call re-derives it | 1 request |
 | 🧦 **Optional proxies** | pre-checked, sticky-routed, health-tracked pool | — |
+
+## 📦 What's new in v1.4
+
+**US-homenet URL persistence + prune + daily production cadence**
+- US-market gallery URLs (homenet partner, delivered inline with every
+  search response) are now persisted in the store — zero extra requests.
+  This makes the disk audit complete (~150k expected files instead of
+  ~49k), lets the dead-URL cache absorb homenet 404s, and makes orphan
+  cleanup safe.
+- `ferrari-preowned prune <target>` — deletes old-URL-generation files;
+  **dry-run by default**, `--apply` executes. Fail-closed guards: refuses
+  on stale stores (>10% live cars without URLs); never touches files of
+  sold cars, unattributed folders, or cars whose current URLs are ALL
+  dead upstream (old generations are the best data left).
+- `smart --prune` — opt-in auto-prune after a fully clean run.
+- Nightly production cadence: `scripts/run_daily.sh` + systemd user
+  timer (03:00, `Persistent=true` catch-up, 14-log rotation, blocked-run
+  exit 2 is an expected clean outcome — never retry-looped).
+- `cars D/T+` progress display marks counts() over-delivery honestly.
+
+**v1.3 (progress reporting)** and **v1.2 (bullet-proofing)** below.
 
 ## 📦 What's new in v1.3
 
@@ -197,7 +218,7 @@ Full reasoning in [docs/stealth.md](docs/stealth.md).
 
 ```bash
 python -m pytest tests/ -q
-# 108 passed
+# 121 passed
 ```
 
 <a name="verification"></a>

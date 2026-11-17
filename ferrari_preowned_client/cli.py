@@ -29,6 +29,7 @@ import argparse
 import json
 import sys
 import time
+from pathlib import Path
 
 from . import __version__
 from .client import FerrariPreownedClient
@@ -147,15 +148,57 @@ def cmd_smart(args) -> int:
     from .engine import run_pipeline
     t0 = time.time()
     log_fn, on_snapshot, _ = _progress_callbacks(args)
+    store = _open_store(args)
     with _build_client(args) as client:
         result = run_pipeline(
             client, args.target, mode="smart",
-            store=_open_store(args),
+            store=store,
             countries=_csv_list(args.countries),
             image_workers=args.workers,
             progress=log_fn, on_snapshot=on_snapshot)
+    if (getattr(args, "prune", False)
+            and not result.get("blocked")
+            and not result.get("error_count")
+            and not result.get("interrupted")):
+        # opt-in auto-prune, only after a fully clean run
+        from .engine import prune_orphans
+        res = prune_orphans(Path(args.target) / "images", store,
+                            apply=True)
+        if not res.get("refused"):
+            print(f"[prune] {res['orphan_files']} orphan files deleted "
+                  f"({res['bytes_freed'] / (1000 ** 3):.2f} GB freed; "
+                  f"sold-car and unattributed files untouched)",
+                  flush=True)
     return _print_engine_result(result, time.time() - t0,
                                 style=getattr(args, "progress", "line"))
+
+
+def cmd_prune(args) -> int:
+    """Dry-run by default; --apply deletes. Fail-closed guards inside."""
+    from .engine import prune_orphans
+    t0 = time.time()
+    store = _open_store(args)
+    res = prune_orphans(Path(args.target) / "images", store,
+                        apply=bool(args.apply))
+    if res.get("refused"):
+        print("PRUNE REFUSED:", res["reason"])
+        return 2
+    verb = "DELETED" if res["applied"] else "would delete"
+    print("=" * 64)
+    print(f"  prune ({'APPLY' if res['applied'] else 'DRY RUN'})")
+    print(f"  orphan files:    {res['orphan_files']} "
+          f"({res['bytes_freed'] / (1000 ** 3):.2f} GB) {verb}")
+    print(f"  sold-car files:  {res['sold_car_files_untouched']} "
+          f"(never touched — sold cars keep their images)")
+    print(f"  unattributed:    {res['unattributed_files_untouched']} "
+          f"(never touched — no store car claims them)")
+    if res["sample"]:
+        print("  sample:")
+        for path in res["sample"][:10]:
+            print(f"    {path}")
+    print("=" * 64)
+    print(f"  wall time: {time.time() - t0:.1f}s")
+    return 0
 
 
 def _open_store(args):
@@ -312,6 +355,16 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--workers", type=int, default=4)
     sp.add_argument("--progress", choices=("line", "json"), default="line",
                     help="output mode: human lines or JSON events")
+    sp.add_argument("--prune", action="store_true",
+                    help="after a fully clean run, delete orphaned image "
+                         "files (old URL generations)")
+
+    sp = sub.add_parser("prune", parents=[common_p],
+                        help="prune orphaned image files (dry-run default)")
+    sp.add_argument("target")
+    sp.add_argument("--store", default=None)
+    sp.add_argument("--apply", action="store_true",
+                    help="actually delete (default: dry-run report)")
     return p
 
 
@@ -322,7 +375,7 @@ def main(argv=None) -> int:
         "search": cmd_search, "detail": cmd_detail,
         "snapshot": cmd_snapshot, "full": cmd_full,
         "smart": cmd_smart, "verify": cmd_verify,
-    }
+    "prune": cmd_prune,}
     return handlers[args.command](args)
 
 
