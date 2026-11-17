@@ -98,11 +98,14 @@ class ImageDownloader:
         n_skip = 0
         # pre-check which files are missing; if none, this is a pure
         # resume-skip gallery: record the skips and take NO burst pauses.
+        # Dead upstream URLs have no file BY DESIGN — they never block
+        # the fast path and never cost a request.
         missing = [(i, url, out) for i, (url, out) in enumerate([
             (u, car_dir / self._image_filename(u, j))
             for j, u in enumerate(urls)])]
-        # (fast path when everything exists)
-        if all(out.exists() and out.stat().st_size > 0 for _, _, out in missing):
+        # (fast path when everything exists, ignoring dead URLs)
+        if all((out.exists() and out.stat().st_size > 0)
+               or url in self.dead_urls for _, url, out in missing):
             with self._lock:
                 self.stats["skipped_existing"] += len(urls)
             return {
@@ -118,7 +121,10 @@ class ImageDownloader:
             results.append(r)
             if r["status"] == "ok":
                 n_ok += 1
-            elif r["status"] == "skipped_existing":
+            elif r["status"] in ("skipped_existing", "skipped_dead"):
+                # a dead-URL skip is a SUCCESS (zero-request skip), never
+                # a failure — miscounting it once showed phantom 'fail'
+                # numbers in the progress line while the store was clean
                 n_ok += 1
                 n_skip += 1
             if on_progress:

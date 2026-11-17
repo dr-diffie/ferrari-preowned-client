@@ -5,7 +5,7 @@
 **A stealthy, fully-verified Python client for [preowned.ferrari.com](https://preowned.ferrari.com) — search API, detail pages, THRON image galleries, and VIN decryption with a self-healing keystream oracle.**
 
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
-[![Tests](https://img.shields.io/badge/tests-121%20passing-brightgreen)](#tests)
+[![Tests](https://img.shields.io/badge/tests-122%20passing-brightgreen)](#tests)
 [![Live Verified](https://img.shields.io/badge/live%20verified-2026--09--24-success)](#verification)
 [![Dependencies](https://img.shields.io/badge/dependencies-requests%20only-orange)](#design-principles)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
@@ -218,7 +218,7 @@ Full reasoning in [docs/stealth.md](docs/stealth.md).
 
 ```bash
 python -m pytest tests/ -q
-# 121 passed
+# 122 passed
 ```
 
 <a name="verification"></a>

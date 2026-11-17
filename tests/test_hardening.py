@@ -80,6 +80,27 @@ class TestImageHardening:
         d.transport._session.get.assert_not_called()
         assert d.stats["skipped_dead"] == 1
 
+    def test_dead_url_counted_as_skip_not_failure(self, tmp_path):
+        """Regression: dead-URL skips must land in ok/skip, never in
+        'failed' — the progress line once showed phantom fail counts."""
+        from ferrari_preowned_client.models import Gallery, GalleryItem
+        d = self._downloader(dead={"https://cdn.test/dead.jpg"})
+        r_ok = MagicMock(); r_ok.status_code = 200
+        png = (b"\x89PNG\r\n\x1a\n" + b"\x00" * 8)
+        r_ok.content = png
+        d.transport._session.get.return_value = r_ok
+        listing = MagicMock()
+        listing.identity_key = "ZFFTEST00000000009"
+        d._resolve_car_dir = lambda root, l: root / "car9"
+        gal = Gallery(gallery_id="g", items=[
+            GalleryItem(content_id="0", content_url="https://cdn.test/dead.jpg"),
+            GalleryItem(content_id="1", content_url="https://cdn.test/live.jpg"),
+        ])
+        res = d.download_gallery(listing, gal, tmp_path)
+        assert res["ok"] == 2       # dead skip counts as ok, not failure
+        assert res["skipped"] == 1   # only the dead url skipped
+        assert res["total"] - res["ok"] == 0  # zero failures
+
     def test_404_marks_url_dead(self, tmp_path):
         d = self._downloader()
         r404 = MagicMock(); r404.status_code = 404
